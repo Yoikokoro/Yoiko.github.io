@@ -56,6 +56,13 @@
         #noButton:hover {
             background-color: darkred;
         }
+        #musicButton {
+            background-color: #4CAF50; /* Music button background */
+            font-size: 14px;
+        }
+        #musicButton:hover {
+            background-color: #45a049;
+        }
 
         /* Ensure the layout adjusts for mobile screens */
         @media (max-width: 600px) {
@@ -79,8 +86,11 @@
         <button id="yesButton" onclick="handleYes()">Yes</button>
         <button id="noButton" onclick="moveButton()">No</button>
 
-        <!-- Audio Player placed below buttons -->
-        <audio controls autoplay loop>
+        <!-- Music Control Button -->
+        <button id="musicButton" onclick="toggleMusic()">Music</button>
+
+        <!-- Audio Player for music -->
+        <audio id="musicPlayer" autoplay loop>
             <source src="love.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
@@ -103,6 +113,19 @@
         function handleYes() {
             alert('emmm serius mau?');
             window.close(); // Try to close the window after the alert
+        }
+
+        function toggleMusic() {
+            const musicPlayer = document.getElementById('musicPlayer');
+            const musicButton = document.getElementById('musicButton');
+
+            if (musicPlayer.paused) {
+                musicPlayer.play();
+                musicButton.innerText = 'Pause Music'; // Change button text
+            } else {
+                musicPlayer.pause();
+                musicButton.innerText = 'Play Music'; // Change button text
+            }
         }
     </script>
 </body>
