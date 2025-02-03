@@ -38,6 +38,7 @@
             cursor: pointer;
             margin: 5px;
             width: auto; /* Make buttons smaller */
+            position: relative; /* Allow the transform to affect positioning */
         }
         button:hover {
             opacity: 0.8;
@@ -79,7 +80,7 @@
         <button id="noButton" onclick="moveButton()">No</button>
 
         <!-- Audio Player placed below buttons -->
-        <audio controls autoplay loop muted>
+        <audio controls autoplay loop>
             <source src="love.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
@@ -95,4 +96,14 @@
             const randomX = Math.random() * (containerRect.width - noButton.offsetWidth);
             const randomY = Math.random() * (containerRect.height - noButton.offsetHeight);
 
-         
+            // Apply new position using transform for smoother animation
+            noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        }
+
+        function handleYes() {
+            alert('emmm serius mau?');
+            window.close(); // Try to close the window after the alert
+        }
+    </script>
+</body>
+</html>
