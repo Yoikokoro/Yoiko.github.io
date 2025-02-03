@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Valentine?</title>
+    <title>mau coba lagi dari nol?</title>
     <style>
         body {
             display: flex;
@@ -57,7 +57,7 @@
 <body>
     <div class="container">
         <h1>Can we try again cinta??</h1>
-        <button id="yesButton" onclick="alert('emmm serius mau?')">Yes</button>
+        <button id="yesButton" onclick="handleYes()">Yes</button>
         <button id="noButton" onclick="moveButton()">No</button>
     </div>
 
@@ -73,6 +73,11 @@
 
             // Apply new position using transform for smoother animation
             noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        }
+
+        function handleYes() {
+            alert('emmm serius mau?');
+            window.close(); // Try to close the window after the alert
         }
     </script>
 </body>
