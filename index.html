@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mau coba lagi dari nol?</title>
+    <title>Can We Try Again?</title>
     <style>
         body {
             display: flex;
@@ -23,19 +23,22 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             position: relative;
             width: 90%;
-            max-width: 400px;
+            max-width: 350px; /* Make the container width responsive */
         }
         h1 {
             color: rgb(255, 141, 179);
+            font-size: 1.5em; /* Adjust size for smaller screens */
         }
         button {
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 15px 25px;
+            font-size: 18px;
             color: white;
-            border: none;       
+            border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin: 5px;
+            margin: 10px;
+            width: 100%; /* Make buttons responsive */
+            box-sizing: border-box; /* Ensures padding doesn't break the layout */
         }
         button:hover {
             opacity: 0.8;
@@ -53,10 +56,25 @@
         #noButton:hover {
             background-color: darkred;
         }
+
+        /* Ensure the layout adjusts for mobile screens */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.2em;
+            }
+            .container {
+                width: 85%;
+                padding: 15px;
+            }
+            button {
+                font-size: 16px;
+                padding: 12px 20px;
+            }
+        }
     </style>
 </head>
 <body>
-  <audio autoplay loop>
+    <audio autoplay loop>
         <source src="love.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
